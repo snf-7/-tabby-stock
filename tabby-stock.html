@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6CFE92">
+<title>المخزون يتسدّد من مبيعاتك — مشاركة تابي إيماجن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mint:#6CFE92;
+  --mint-deep:#1F9E4F;
+  --ink:#1A1A1A;
+  --paper:#FFFFFF;
+  --mute:#6B6B66;
+  --line:rgba(26,26,26,.14);
+  --dark-card:#1F1E1D;
+  --dark-line:rgba(255,255,255,.09);
+  --dark-text:#F4F3EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--mint);
+  background-image:radial-gradient(rgba(26,26,26,.10) 1.2px,transparent 1.2px);
+  background-size:22px 22px;
+  color:var(--ink);
+  font-family:'Radial','Inter','Readex Pro','Segoe UI',Tahoma,sans-serif;
+  font-size:17px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ink);color:var(--mint)}
+h1,h2,h3,.display{font-family:'Radial','Inter','Readex Pro',sans-serif;line-height:1.25}
+.mono{font-family:'IBM Plex Mono',monospace;direction:ltr;unicode-bidi:isolate}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.dark :focus-visible{outline-color:var(--mint)}
+img,svg,video,canvas{max-width:100%;display:block}
+
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:24px}
+.section{padding-block:clamp(64px,9vw,116px)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;display:inline-flex;align-items:center;gap:10px;color:var(--mute);text-transform:uppercase}
+.eyebrow::before{content:'';width:26px;height:2px;background:currentColor;display:inline-block}
+h2{font-size:clamp(1.9rem,4.4vw,3.1rem);font-weight:700;margin:14px 0 18px}
+.lead{font-size:clamp(1.05rem,1.7vw,1.22rem);max-width:62ch;color:var(--ink)}
+.dark .lead{color:var(--dark-text)}
+.mute{color:var(--mute)}
+.dark .mute{color:rgba(244,243,239,.7)}
+
+.topbar{position:absolute;inset-inline:0;top:0;z-index:10;padding:20px 0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center}
+.wordmark{font-family:'Radial';font-weight:800;font-size:20px;text-decoration:none}
+.topbar a.challenge{font-size:13.5px;text-decoration:none;border:1.5px solid var(--ink);padding:7px 16px;border-radius:99px;background:var(--ink);color:var(--mint);font-weight:500}
+.topbar a.challenge:hover{background:transparent;color:var(--ink)}
+
+.hero{padding-top:150px;padding-bottom:clamp(64px,9vw,110px)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.5rem);font-weight:800;letter-spacing:-.01em}
+.hero h1 .hl{background:var(--ink);color:var(--mint);padding:0 .35em;border-radius:.28em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero .sub{margin-top:22px;font-size:clamp(1.05rem,1.8vw,1.25rem);max-width:54ch}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:99px;padding:14px 30px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;border:2px solid var(--ink);transition:transform .15s ease,background .15s ease;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:var(--mint)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-mint{background:var(--mint);color:var(--ink)}
+
+.phone{width:min(310px,86vw);background:var(--ink);border-radius:46px;padding:13px;box-shadow:0 44px 90px rgba(26,26,26,.38);margin-inline:auto;position:relative}
+.phone .scr{background:var(--paper);border-radius:34px;overflow:hidden;min-height:590px;display:flex;flex-direction:column;color:var(--ink)}
+.notch{height:30px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.notch i{width:96px;height:22px;background:var(--ink);border-radius:99px;display:block}
+.a-body{padding:10px 20px 20px;flex:1;display:flex;flex-direction:column;gap:14px}
+.a-title{font-family:'Radial';font-weight:700;font-size:21px}
+.a-note{font-size:12.5px;color:var(--mute);line-height:1.6}
+.a-chip{align-self:flex-start;background:var(--mint);border-radius:99px;padding:5px 14px;font-size:12.5px;font-weight:600}
+.a-row{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px dashed var(--line)}
+.a-row:last-of-type{border-bottom:0}
+.av{width:34px;height:34px;border-radius:99px;background:var(--ink);color:var(--mint);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex:0 0 auto}
+.a-row .who{flex:1;min-width:0}
+.a-row .who b{display:block;font-size:14.5px;font-weight:600}
+.a-row .who span{font-size:12px;color:var(--mute)}
+.a-row .amt{font-weight:600;font-size:14.5px;white-space:nowrap}
+.a-btn{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;border:0;border-radius:99px;padding:15px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit}
+.a-btn.mint{background:var(--mint);color:var(--ink)}
+.a-btn:active{transform:scale(.98)}
+
+.paper-sec{background:var(--paper)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+@media (max-width:860px){.two-col{grid-template-columns:1fr}}
+.evidence{border:2px solid var(--ink);border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.8;background:var(--paper)}
+.evidence b{font-weight:600}
+.evidence .src{display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--mint-deep);font-weight:400}
+.dir-diagram{display:grid;gap:14px;margin-top:26px}
+.dir-line{display:flex;align-items:center;gap:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:16px 20px}
+.dir-line .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;background:var(--ink);color:var(--mint);padding:3px 10px;border-radius:99px;flex:0 0 auto}
+.dir-line p{font-size:15px}
+.dir-line.dead{opacity:.62}
+.dir-line .arrow{font-weight:700;flex:0 0 auto}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:10px 4px 26px}
+.step{min-width:0}
+@media (max-width:980px){.steps{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory}.step{scroll-snap-align:start;flex:0 0 auto;width:236px}}
+.step .mini{background:var(--paper);border-radius:34px;padding:11px;border:1.5px solid var(--line)}
+.step .mscr{border-radius:25px;overflow:hidden;min-height:378px;display:flex;flex-direction:column;background:#FFFFFF;padding:16px 14px;gap:11px}
+.step:nth-child(odd) .mscr{background:var(--ink);color:var(--dark-text)}
+.step .num{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;color:var(--mint-deep)}
+.step:nth-child(odd) .num{color:var(--mint)}
+.step h4{font-family:'Radial';font-size:18.5px;font-weight:700;line-height:1.35}
+.step p{font-size:13px;line-height:1.65;color:var(--mute)}
+.step:nth-child(odd) p{color:rgba(244,243,239,.8)}
+.mrow{display:flex;align-items:center;gap:8px;font-size:12px;background:var(--paper);border-radius:12px;padding:8px 10px;color:var(--ink)}
+.step:nth-child(odd) .mrow{background:var(--dark-card);color:var(--dark-text);border:1px solid var(--dark-line)}
+.mrow .av{width:24px;height:24px;font-size:11px}
+.mrow .amt{margin-inline-start:auto;font-weight:600}
+
+.dark{background:var(--ink);color:var(--dark-text)}
+.dark .eyebrow{color:var(--mint)}
+.dark h2{color:var(--paper)}
+.demo-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:start;margin-top:40px}
+@media (max-width:920px){.demo-grid{grid-template-columns:1fr}}
+.demo-phone{width:min(330px,88vw);margin-inline:auto}
+.demo-phone .scr{min-height:560px;background:#FFFFFF}
+.demo-status{font-size:13px;min-height:22px;color:var(--ink)}
+.tile{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:11px 13px}
+.tile b{display:block;font-family:'Radial';font-size:20px;font-weight:800;line-height:1.3}
+.tile span{font-size:11.5px;color:var(--mute)}
+.repay{background:#F1F0EC;border-radius:99px;height:12px;overflow:hidden}
+.repay i{display:block;height:100%;width:0;background:var(--mint-deep);border-radius:99px;transition:width 1.2s cubic-bezier(.22,.61,.36,1)}
+.match-card{background:var(--dark-card);border:1px solid var(--dark-line);border-radius:22px;padding:26px 24px;color:var(--dark-text);display:flex;flex-direction:column;gap:13px;margin-bottom:22px}
+.match-card .mrow{background:transparent;border:1px solid var(--dark-line);color:var(--dark-text)}
+.match-card .mrow .who span{color:rgba(244,243,239,.72)}
+details.bytes-box{margin-top:26px;background:var(--dark-card);border:1px solid var(--dark-line);border-radius:16px;overflow:hidden}
+details.bytes-box summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:15px;list-style:none;display:flex;align-items:center;gap:10px}
+details.bytes-box summary::before{content:'▸';color:var(--mint);transition:transform .2s}
+details.bytes-box[open] summary::before{transform:rotate(90deg)}
+.bytes{font-family:'IBM Plex Mono',monospace;font-size:12px;overflow-x:auto;padding:4px 20px 18px}
+.bytes table{border-collapse:collapse;width:100%;min-width:460px;font-family:'Radial','Inter','Readex Pro',sans-serif}
+.bytes th{color:var(--mint);font-weight:500;text-align:right;padding:6px 10px;border-bottom:1px solid var(--dark-line);font-size:11px;letter-spacing:.08em}
+.bytes td{padding:6px 10px;border-bottom:1px dotted rgba(255,255,255,.12);color:rgba(244,243,239,.85);text-align:right}
+.bytes td:first-child{color:var(--mint)}
+
+.q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
+@media (max-width:920px){.q-grid{grid-template-columns:1fr}}
+.q-card{background:var(--dark-card);border:1px solid var(--dark-line);border-radius:22px;padding:26px 24px;display:flex;flex-direction:column;gap:14px}
+.q-card .q-num{font-family:'IBM Plex Mono',monospace;color:var(--mint);font-size:12.5px;letter-spacing:.12em}
+.q-card h3{color:var(--paper);font-size:21px}
+.q-card p,.q-card li{font-size:14px;color:rgba(244,243,239,.9);line-height:1.8}
+.q-card ul{padding-inline-start:20px;display:grid;gap:6px}
+.q-card .ask{margin-top:auto;border-top:1px dashed var(--dark-line);padding-top:12px;font-size:13.5px;color:var(--mint)}
+
+.b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+@media (max-width:920px){.b-grid{grid-template-columns:1fr}}
+.b-card{background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.b-card.hot{background:var(--ink);color:var(--dark-text);border-color:var(--ink)}
+.b-card h3{font-size:22px}
+.b-card.hot h3{color:var(--mint)}
+.b-card p{font-size:14.5px;line-height:1.8}
+.b-card .tag{align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;background:var(--mint);color:var(--ink);border-radius:99px;padding:4px 12px;font-weight:600}
+.closing{margin-top:56px;text-align:center}
+.closing .big{font-family:'Radial';font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:700;max-width:24ch;margin-inline:auto}
+
+footer{background:var(--ink);color:rgba(244,243,239,.6);padding:44px 0 56px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer b{color:var(--mint)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}.repay i{transition:none}}
+.stepdots{display:flex;gap:6px;justify-content:center;padding:2px 0}
+.stepdots i{width:26px;height:4px;border-radius:99px;background:#F1F0EC;transition:background .3s}
+.stepdots i.on{background:var(--ink)}
+.sim-screen{display:flex;flex-direction:column;gap:13px;flex:1;animation:simIn .3s ease both}
+@keyframes simIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mchk{display:flex;align-items:center;gap:9px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:11px 13px;font-size:13.5px;color:var(--ink)}
+.mchk .dot{width:19px;height:19px;border-radius:99px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink);border:2px solid var(--line)}
+.mchk.pending .dot{border:2px solid var(--line);border-top-color:var(--mint-deep);animation:spin 1s linear infinite}
+.mchk.done .dot{background:var(--mint);border-color:var(--mint);animation:pop .3s ease both}
+.mchk.done{border-color:var(--mint-deep)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%{transform:scale(.5)}70%{transform:scale(1.18)}100%{transform:scale(1)}}
+.a-chip.pulse{animation:chipIn .45s ease both}
+@keyframes chipIn{0%{opacity:0;transform:scale(.9)}60%{transform:scale(1.05)}100%{opacity:1;transform:scale(1)}}
+.a-row.reveal-row{animation:rowIn .35s ease both}
+@keyframes rowIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.flow{display:flex;align-items:stretch;gap:0;background:var(--dark-card);border:1px solid var(--dark-line);border-radius:16px;padding:18px 14px;margin-bottom:20px}
+.flow .fnode{display:flex;flex-direction:column;justify-content:center;gap:3px;width:31%;text-align:center}
+.flow .fnode b{color:var(--mint);font-size:14px}
+.flow .fnode span{font-size:11px;color:rgba(244,243,239,.66);line-height:1.5}
+.flow .fline{flex:1;height:2px;background:var(--dark-line);position:relative;overflow:hidden;align-self:center;min-width:16px}
+.flow .fline::after{content:'';position:absolute;top:-2px;right:-9px;width:9px;height:6px;border-radius:99px;background:var(--mint);animation:flowDot 1.5s linear infinite}
+@keyframes flowDot{0%{right:-9px}100%{right:100%}}
+@media (prefers-reduced-motion:reduce){.sim-screen,.mchk.done .dot,.a-chip.pulse,.a-row.reveal-row,.flow .fline::after,.mchk.pending .dot{animation:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:44px}.hero{padding-top:120px}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top">المخزون يتسدّد من مبيعاتك</a>
+    <a class="challenge" href="https://tabby.sa/ar-SA/engineering/imagine" target="_blank" rel="noopener">صفحة التحدي</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>تمويل مخزونك <span class="hl">يُسدَّد من مبيعاتك</span> — لا من تاريخ استحقاق.</h1>
+      <p class="sub">تابي تسدّد فاتورة مخزونك لمورّدك مباشرة، ويُسترد المبلغ بنسبة صغيرة من كل عملية بيع تمرّ عندك. تمويل مربوط بالبيع لا بالتقويم: الشهر الضعيف يبطئ السداد ولا يخلق تعثرًا — والضمان هو مبيعاتك نفسها، لا كفيل ولا ضمانات.</p>
+      <div class="cta-row">
+        <a class="btn btn-ink" href="#demo">جرّب المحاكي الحي</a>
+        <a class="btn btn-ghost" href="#problem">اقرأ القصة</a>
+      </div>
+    </div>
+    <div class="phone">
+      <div class="scr">
+        <div class="notch"><i></i></div>
+        <div class="a-body">
+          <div class="a-title">لوحة التاجر</div>
+          <div class="a-note">تمويل المخزون — يُسترد من المبيعات</div>
+          <div class="a-chip">مخزونك وصل، والسداد بدأ</div>
+          <div class="a-row"><span class="av">م</span><div class="who"><b>فاتورة المورّد</b><span>دفعتها تابي مباشرة</span></div><span class="amt mono">8,000.00</span></div>
+          <div class="a-row"><span class="av">٪</span><div class="who"><b>الاسترداد</b><span>من كل عملية بيع</span></div><span class="amt">٤٪</span></div>
+          <div class="a-row"><span class="av">✓</span><div class="who"><b>المسدَّد حتى الآن</b><span>خلال ٦ أسابيع</span></div><span class="amt mono">3,120.00</span></div>
+          <button class="a-btn mint" type="button">أرسل طلب تمويل مخزون</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-sec" id="problem">
+  <div class="wrap">
+    <h2 class="reveal">المنشأة الصغيرة تموّل مخزونها بأصعب طريق… أو لا تموّله.</h2>
+    <p class="lead reveal">البنوك تشترط ضمانات وكفيلًا وتاريخًا ائتمانيًا طويلًا، والمخزون نفسه لا يُقبل ضمانًا. فينتهي الأمر بالتاجر الصغير إلى شراء كميات ضئيلة بسعر أعلى، وهامش يتآكل، وقاعدة عملاء لا تكبر.</p>
+    <div class="dir-diagram reveal">
+      <div class="dir-line dead"><span class="tag">الضمان</span><p>المخزون الذي سيشترونه هو نفسه لا يُقبل ضمانًا — والكفيل الشخصي هو المطلوب دائمًا.</p><span class="arrow">✕</span></div>
+      <div class="dir-line dead"><span class="tag">الجدول</span><p>قسط شهري ثابت بنفس المبلغ، يقع في الشهر الضعيف قبل الشهر القوي — فيتعثر التاجر بسبب التوقيت لا بسبب العجز.</p><span class="arrow">✕</span></div>
+      <div class="dir-line dead"><span class="tag">أقوى دليل مُهمَل</span><p>مبيعات التاجر موثقة أصلًا عبر قنوات التحصيل، ومع ذلك لا تُقرأ كدليل أهلية ولا كمصدر سداد.</p><span class="arrow">✕</span></div>
+    </div>
+    <div class="two-col" style="margin-top:30px">
+<div class="evidence reveal">وتمويلهم أقل بكثير: متوسط الائتمان للمنشأة متناهية الصغر <b>٥٣ ألف ريال</b> عام ٢٠٢٥، مقابل <b>٩٨٣ ألف ريال</b> للمنشأة الصغيرة و<b>١٠.١ مليون ريال</b> للمتوسطة. أي أن المتناهية الصغر تحصل على <b>٥.٤٪</b> مما تحصل عليه الصغيرة — وهي <b>٨٩.٣٪</b> من إجمالي المنشآت.
+<b class="src">المصدر: تقرير نمو المنشآت الصغيرة والمتوسطة ٢٠٢٦، نقلًا عن بيانات البنك المركزي السعودي</b></div>
+<div class="evidence reveal">والنتيجة مقيدة بالنمو: خلال ٢٠٢١–٢٠٢٥ لم يصعد إلى فئة أكبر إلا <b>٦.٧٪</b> من المنشآت متناهية الصغر، بينما <b>٥١٪</b> من المنشآت الصغيرة هبطت إلى فئة أصغر. المشكلة ليست في الطلب — بل في التمويل الذي يوقف النمو.
+<b class="src">المصدر: التقرير نفسه — مؤشرات حركة المنشآت بين فئات الحجم</b></div>
+    </div>
+    <p class="lead reveal" style="margin-top:36px"><b>التاجر يبيع كل يوم، وبياناته موجودة — الناقص هو من يقرأها ويموّل عليها.</b></p>
+  </div>
+</section>
+
+<section class="section" id="idea" style="padding-top:clamp(56px,7vw,90px)">
+  <div class="wrap">
+    <h2 class="reveal">الضمان ليس أصولًا — إنه تدفق بيع موثق.</h2>
+    <p class="lead reveal">الفكرة بجملة: التاجر يطلب، وتابي تدفع فاتورة المورّد مباشرة فيصله المخزون، ثم يُسترد المبلغ بنسبة ثابتة من كل عملية بيع تمرّ عبر قنوات تابي. لا قسط شهري ثابت، ولا كفيل، ولا ضمانات — النسبة تتحرك مع المبيعات، والنمو يُقاس بالسداد الذي يجري بالفعل.</p>
+    <div class="dir-diagram reveal" style="margin-top:30px">
+      <div class="dir-line"><span class="tag">الضمان من الجوهر</span><p>الاسترداد مربوط بالمبيعات لا بالتقويم: الشهر الضعيف يبطئ السداد ولا يخلق تعثرًا.</p><span class="arrow">✓</span></div>
+      <div class="dir-line"><span class="tag">المخزون كضمان</span><p>المخزون المموَّل يمرّ في قناة بيع لا يملك التاجر التحكم بها — فالسداد يسبق التصرف الحرّ بالمبلغ.</p><span class="arrow">✓</span></div>
+      <div class="dir-line"><span class="tag">بيانات يملكها أحد</span><p>تابي واقفة داخل سلة كل بيع عند التاجر. هذه البيانات أقرب إلى صحة المبيعات من أي تقرير يحمله التاجر إلى البنك.</p><span class="arrow">✓</span></div>
+    </div>
+    <p class="lead reveal" style="margin-top:36px">وأثبت النقطة بنفسي — المحاكي تحت يمشي المسار كاملًا حي: من فاتورة المورّد إلى لوحة سداد تتغذى من كل عملية بيع.</p>
+  </div>
+</section>
+
+<section class="section dark" id="demo">
+  <div class="wrap">
+    <h2 class="reveal">من فاتورة المورّد… إلى سداد يتغذى من المبيعات. حي.</h2>
+    <p class="lead reveal">هذا مو فيديو: محاكاة تفاعلية للمسار كاملًا. أرسل طلب التمويل، شاهد التحقق يجري بمراحل، ثم افتح لوحة السداد وشوف النسبة تتخصم من كل عملية بيع. الأرقام مثال توضيحي.</p>
+    <div class="demo-grid">
+      <div class="phone demo-phone reveal">
+        <div class="scr">
+          <div class="notch"><i></i></div>
+          <div class="a-body">
+            <div class="stepdots"><i class="on"></i><i></i><i></i></div>
+
+            <div class="sim-screen" data-step="1">
+              <div class="a-title">طلب تمويل مخزون</div>
+              <div class="a-note">فاتورة مورّدك — تابي تدفعها مباشرة له</div>
+              <div class="tile"><b><span class="mono">8,000.00</span> ريال</b><span>مصنع السيراميك · فاتورة ٢٤ يوليو</span></div>
+              <div class="a-row"><span class="av">٤٪</span><div class="who"><b>الاسترداد</b><span>من كل عملية بيع — تلقائيًا</span></div><span class="amt">لا قسط ثابت</span></div>
+              <div class="a-row"><span class="av">∞</span><div class="who"><b>المدة</b><span>حسب إيقاع مبيعاتك</span></div><span class="amt">مرتبط بالبيع</span></div>
+              <button class="a-btn mint" type="button" onclick="simGo(2)">أرسل الطلب</button>
+              <button class="a-btn" type="button" onclick="simGo(3)">شوف لوحة السداد</button>
+            </div>
+
+            <div class="sim-screen" data-step="2" style="display:none">
+              <div class="a-title">التحقق في دقائق</div>
+              <div class="a-note">الدليل من مبيعاتك الموثقة عندنا — مو من كفيل</div>
+              <div class="mchk" data-i="1"><span class="dot">✓</span>مبيعاتك موثقة عبر قنوات التحصيل</div>
+              <div class="mchk" data-i="2"><span class="dot">✓</span>الطاقة السدادية كافية بنسبة ٤٪</div>
+              <div class="mchk" data-i="3"><span class="dot">✓</span>العقد إلكتروني وجدول الاسترداد واضح</div>
+              <div class="a-chip pulse" id="okChip" style="display:none">تمّ التمويل — دفعنا <span class="mono">8,000.00</span> ريال للمورّد</div>
+              <button class="a-btn mint" type="button" onclick="simGo(3)" id="go3" style="display:none">شوف لوحة السداد</button>
+              <button class="a-btn" type="button" onclick="simGo(1)">رجوع للطلب</button>
+            </div>
+
+            <div class="sim-screen" data-step="3" style="display:none">
+              <div class="a-title">لوحة السداد</div>
+              <div class="a-chip pulse">مسدَّد <b class="mono" id="cntRepay">0.00</b> ريال من <span class="mono">8,000.00</span></div>
+              <div class="tile"><b><span class="mono" id="cntPct">0</span>٪</b><span>أُنجز خلال ٦ أسابيع من المبيعات</span></div>
+              <div class="repay"><i id="repayFill"></i></div>
+              <div class="a-note">آخر ثلاث عمليات — والاسترداد يُخصم تلقائيًا</div>
+              <div class="a-row reveal-row"><span class="av">١</span><div class="who"><b>بيع</b><span>مبيعات الأسبوع الماضي</span></div><span class="amt"><span class="mono">31.20</span> ريال</span></div>
+              <div class="a-row reveal-row"><span class="av">٢</span><div class="who"><b>بيع</b><span>مبيعات هذا الأسبوع</span></div><span class="amt"><span class="mono">58.00</span> ريال</span></div>
+              <div class="a-row reveal-row"><span class="av">٣</span><div class="who"><b>بيع</b><span>مبيعات اليوم</span></div><span class="amt"><span class="mono">75.20</span> ريال</span></div>
+              <button class="a-btn mint" type="button" onclick="simGo(1)">طلب تمويل جديد</button>
+            </div>
+
+            <div class="demo-status" id="status">جرّبها: أرسل طلب تمويل المخزون.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="flow">
+          <div class="fnode"><b>تابي</b><span>تدفع فاتورة المورّد</span></div>
+          <div class="fline"></div>
+          <div class="fnode"><b>المورّد</b><span>يشحن المخزون</span></div>
+          <div class="fline"></div>
+          <div class="fnode"><b>التاجر</b><span>يبيع ويحصّل</span></div>
+        </div>
+        <div class="flow">
+          <div class="fnode"><b>كل عملية بيع</b><span>تمرّ عبر القناة</span></div>
+          <div class="fline"></div>
+          <div class="fnode"><b>٤٪ استرداد</b><span>تُخصم تلقائيًا</span></div>
+          <div class="fline"></div>
+          <div class="fnode"><b>رصيد التمويل</b><span>ينقص بلا تاريخ ثابت</span></div>
+        </div>
+        <div class="match-card">
+          <div class="a-title">وش يثبته النظام؟</div>
+          <div class="mrow"><span class="av">١</span><span>ضمان التمويل</span><span class="amt">تدفق مبيعات موثق — لا كفيل</span></div>
+          <div class="mrow"><span class="av">٢</span><span>إيقاع السداد</span><span class="amt">نسبة من البيع لا قسط ثابت</span></div>
+          <div class="mrow"><span class="av">٣</span><span>الإفصاح</span><span class="amt">النسبة والمدة ونتيجة التأخر في العقد قبل التوقيع</span></div>
+          <div class="mrow"><span class="av">٤</span><span>الترخيص</span><span class="amt">غير محلول بالكامل — وهو سؤالنا المفتوح (س ٠٢)</span></div>
+          <p class="mute" style="font-size:13.5px;margin-top:8px">تمويل المنشآت يقع داخل النطاق الرقابي للبنك المركزي السعودي بمسار مختلف عن ترخيص الشراء الآجل — ولهذا نطرحه سؤالًا صريحًا لا يقينًا.</p>
+        </div>
+        <details class="bytes-box">
+          <summary>تدفق البيانات — من الطلب إلى الاسترداد</summary>
+          <div class="bytes"><table>
+            <tr><th>المرحلة</th><th>ما يحدث</th></tr>
+            <tr><td>١ · الطلب</td><td>التاجر يرفع فاتورة المورّد ويحدد نسبة الاسترداد مع الجدول</td></tr>
+            <tr><td>٢ · التحقق</td><td>مبيعات التاجر وطاقته السدادية تُقيَّم من بيانات قنوات التحصيل</td></tr>
+            <tr><td>٣ · الدفع</td><td>تابي تدفع للمورّد مباشرة، ويشحن المورّد المخزون للتاجر</td></tr>
+            <tr><td>٤ · البيع</td><td>التاجر يبيع، وكل عملية تمرّ عبر القناة تُنتج استردادًا بنسبة ثابتة</td></tr>
+            <tr><td>٥ · التسوية</td><td>الاستردادات تُخصم من الرصيد في دورة تسوية معلنة، بلا تاريخ استحقاق ثابت</td></tr>
+          </table></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-sec" id="journey">
+  <div class="wrap">
+    <h2 class="reveal">خمس خطوات — وآخر خطوة ما لها نظير في منتج مالي اليوم.</h2>
+    <div class="steps reveal">
+      <div class="step"><div class="mini"><div class="mscr">
+        <div class="num">٠١ · الطلب</div><h4>فاتورة مورّدك</h4>
+        <div class="mrow"><span class="av">م</span><span>مصنع السيراميك</span><span class="amt">8,000.00</span></div>
+        <p>بلا نموذج ورقي وبلا ملف ضمانات — فاتورة موجودة أصلًا.</p>
+      </div></div></div>
+      <div class="step"><div class="mini"><div class="mscr">
+        <div class="num">٠٢ · التقييم</div><h4>من مبيعاتك الموثقة</h4>
+        <div class="mrow"><span class="av">✓</span><span>تدفق المبيعات</span><span class="amt">موثق</span></div>
+        <div class="mrow"><span class="av">✓</span><span>الطاقة السدادية</span><span class="amt">كافية</span></div>
+        <p>الدليل هو مبيعاتك الجارية — ما يُمنح ائتمانًا على كلام.</p>
+      </div></div></div>
+      <div class="step"><div class="mini"><div class="mscr">
+        <div class="num">٠٣ · الدفع</div><h4>المورّد يستلم فورًا</h4>
+        <div class="mrow"><span class="av">ت</span><span>تابي ← المورّد</span><span class="amt">8,000.00</span></div>
+        <div class="mrow"><span class="av">□</span><span>المخزون يشحن</span><span class="amt">إلى متجرك</span></div>
+        <p>المورّد يستلم كاملًا، وعلاقتك به ما تتأثر.</p>
+      </div></div></div>
+      <div class="step"><div class="mini"><div class="mscr">
+        <div class="num">٠٤ · البيع</div><h4>كل عملية تُسدّد جزءًا</h4>
+        <div class="mrow"><span class="av">٤٪</span><span>من كل عملية بيع</span><span class="amt">استرداد تلقائي</span></div>
+        <p>لا قسط شهري ثابت — السداد يجري بنفس إيقاع مبيعاتك.</p>
+      </div></div></div>
+      <div class="step"><div class="mini"><div class="mscr">
+        <div class="num">٠٥ · النمو</div><h4>سقف أوسع بعد كل دورة</h4>
+        <div class="mrow"><span class="av">↑</span><span>مخزون أكبر</span><span class="amt">بهامش أفضل</span></div>
+        <div class="mrow"><span class="av">→</span><span>سجل سداد ناجح</span><span class="amt">يفتح دورة أكبر</span></div>
+        <p>المنشأة الصغيرة تكبر بمخزونها، لا بكفيل أفضل.</p>
+      </div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="thinking">
+  <div class="wrap">
+    <h2 class="reveal">أقوى شي في هذه المشاركة مو اليقين — إنه حدود اليقين.</h2>
+    <p class="lead reveal">أربعة أسئلة ما أقدر أحسمها لحالي، وأهمها سؤال الترخيص — وهو اللي يحدد شكل المنتج كاملًا.</p>
+    <div class="q-grid">
+      <div class="q-card reveal">
+        <span class="q-num">س ٠١ · الترخيص</span>
+        <h3>هل تمويل المنشآت داخل نطاقكم الحالي؟</h3>
+        <p>تحليل قانوني منشور يضع تمويل التجار داخل النطاق الرقابي للبنك المركزي السعودي، وهناك قواعد مستقلة لتمويل المنشآت تختلف عن ترخيص الشراء الآجل. لذلك سؤالي هنا صريح لا تجميلي.</p>
+        <ul>
+          <li>مسار أول: شراكة مع جهة تمويل منشآت مرخّصة — أسرع للإطلاق وأخف نظاميًا</li>
+          <li>مسار ثانٍ: ترخيص مستقل داخل المجموعة — أبطأ وأعمق وسيطرة كاملة</li>
+          <li>المخاطرة تبقى على تابي في المسارين، والفرق في الهيكل التنظيمي فقط</li>
+        </ul>
+        <div class="ask">سؤالي لكم: أي المسارين تقرؤونه أقرب لترتيبكم التنظيمي — وشراكة أم ترخيص؟</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">س ٠٢ · التسعير</span>
+        <h3>مين يدفع، وبأي نسبة استرداد؟</h3>
+        <p>التمويل له كلفة رأس مال، ولا تاجر يدفع سعرًا لا يراه في هامشه. النسبة المنخفضة جدًا تُبطئ السداد وتطيل التعرّض، والمرتفعة تدفع التاجر للبيع خارج القناة.</p>
+        <ul>
+          <li>عائد على الرصيد القائم + سعر فتح معلن لكل دورة تمويل</li>
+          <li>النسبة قابلة للتعديل بعد كل دورة ناجحة — تقدّمًا أو تراجعًا بحسب السجل</li>
+          <li>احتساب الاسترداد على ضريبة القيمة المضافة قبل أو بعدها — فرق جوهري في الهامش</li>
+        </ul>
+        <div class="ask">سؤالي لكم: أي نسبة استرداد تعتبرونها سعرًا عادلًا لتاجر هامشه تحت ٢٥٪؟</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">س ٠٣ · المخاطر</span>
+        <h3>مبيعات ضعيفة، أو تسجيل متلاعَب به؟</h3>
+        <p>ربط السداد بالمبيعات يخفف مخاطرة التعثر لكنه يخلق مخاطرة أخطر: تسجيل عمليات غير حقيقية لتصفير الرصيد بسرعة، أو إرجاع بعد احتساب الاسترداد.</p>
+        <ul>
+          <li>لا يُحتسب استردادًا إلا ما طابق قناة دفع موثقة وتسوية مكتملة</li>
+          <li>تسوية معلنة لكل دورة، وحجز احتياطي في أول دورة يتراجع مع انتظام السجل</li>
+          <li>العمليات المرتجعة تُسوّى عكسيًا على الرصيد — لا تُترك مكسبًا</li>
+        </ul>
+        <div class="ask">سؤالي لكم: أي نسبة تسجيل مفبرك تعتبرونها مقبولة قبل إيقاف التاجر؟</div>
+      </div>
+      <div class="q-card reveal">
+        <span class="q-num">س ٠٤ · البيع خارج القناة</span>
+        <h3>التاجر يبيع نقدًا خارج القناة — وش يصير؟</h3>
+        <p>لو صار بيع التاجر خارج قنوات التحصيل، ينقص الاسترداد ويطول الرصيد بلا تعثر فعلي. هذا خطر إدارة لا خطر ائتمان، ويحتاج حدًّا واضحًا.</p>
+        <ul>
+          <li>قراري المبدئي: نسبة استرداد دنيا شهرية بعد فترة سماح معلنة</li>
+          <li>عمولات القناة تبقى جاذبة كافيًا للبيع داخلها — أفضل حماية هي أن يبقى التاجر رابحًا</li>
+          <li>تنبيه مبكر للتاجر عند تباطؤ السداد قبل أي إجراء</li>
+        </ul>
+        <div class="ask">سؤالي لكم: أي فترة سماح تقبلونها قبل تفعيل حدّ الاسترداد الأدنى؟</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper-sec" id="who">
+  <div class="wrap">
+    <h2 class="reveal">ثلاث جهات — وواحدة منها تكبر لأول مرة.</h2>
+    <div class="b-grid">
+      <div class="b-card reveal">
+        <span class="tag">التاجر · اليوم</span>
+        <h3>مخزون بضمانته هو</h3>
+        <p>يشتري بكميات جملة وبهامش أفضل، ويسدّد بنفس إيقاع مبيعاته — بلا كفيل وبلا قسط ثابت يخشى الشهر الضعيف.</p>
+      </div>
+      <div class="b-card hot reveal">
+        <span class="tag">تابي · اليوم</span>
+        <h3>خط إيراد ثانٍ وخندق أعمق</h3>
+        <p>عائد على رصيد تمويل، وعلاقة تكبر مع عمر التاجر: كل دورة تمويل تفتح سجلًا أطول وبيانات أعمق من أي قناة أخرى تملكها تابي.</p>
+      </div>
+      <div class="b-card reveal">
+        <span class="tag">العميل · غدًا</span>
+        <h3>توفر أعلى وسعر أفضل</h3>
+        <p>مخزون أكبر يعني سلعة موجودة عند تاجر الحي، بسعر جملة لا تجزئة — والمنشأة الصغيرة تكبر بجواره.</p>
+      </div>
+    </div>
+    <div class="closing reveal">
+      <div class="big">«المخزون الذي ستدفعه من مبيعاتك — يستحق أن يُموَّل من مبيعاتك.»</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>المخزون يتسدّد من مبيعاتك</b> — فهد الشثري · <span class="mono" id="mail"></span><noscript><span class="mono">fahad.alshathri3@gmail.com</span></noscript></div>
+  </div>
+</footer>
+
+<script>
+const MAIL=['fahad.alshathri3','gmail.com'].join('@');
+document.getElementById('mail').textContent=MAIL;
+const REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let simTimers=[];
+function clearSim(){simTimers.forEach(clearTimeout);simTimers=[]}
+function status(msg){const el=document.getElementById('status');el.textContent=msg}
+function countTo(el,to,ms,dec){
+  dec=dec||0;
+  if(REDUCED){el.textContent=to.toFixed(dec);return}
+  const t0=performance.now();
+  (function run(t){
+    const p=Math.min(1,((t||t0)-t0)/ms),e=1-Math.pow(1-p,3);
+    el.textContent=(to*e).toFixed(dec);
+    if(p<1)requestAnimationFrame(run);
+  })(t0);
+}
+function simGo(n){
+  clearSim();
+  document.querySelectorAll('.sim-screen').forEach(x=>{x.style.display=x.dataset.step==String(n)?'flex':'none'});
+  document.querySelectorAll('.stepdots i').forEach((d,i)=>d.classList.toggle('on',i<n));
+  if(n===2){
+    document.querySelectorAll('.mchk').forEach(m=>{m.classList.add('pending');m.classList.remove('done')});
+    document.getElementById('okChip').style.display='none';
+    document.getElementById('go3').style.display='none';
+    status('نقيّم: تدفق المبيعات، والطاقة السدادية، والعقد…');
+    [1,2,3].forEach((k,idx)=>{
+      simTimers.push(setTimeout(()=>{
+        const m=document.querySelector('.mchk[data-i="'+k+'"]');
+        m.classList.remove('pending');m.classList.add('done');
+        if(k===3){simTimers.push(setTimeout(()=>{
+          document.getElementById('okChip').style.display='inline-block';
+          document.getElementById('go3').style.display='block';
+          status('تمّ التمويل — والمورّد استلم كامل المبلغ.');
+        },400))}
+      },600+idx*700));
+    });
+  }
+  if(n===3){
+    document.getElementById('repayFill').style.width=REDUCED?'39%':'0';
+    countTo(document.getElementById('cntRepay'),3120,1400,2);
+    countTo(document.getElementById('cntPct'),39,1400,0);
+    if(!REDUCED){simTimers.push(setTimeout(()=>{document.getElementById('repayFill').style.width='39%'},180))}
+    document.querySelectorAll('.reveal-row').forEach((r,i)=>{r.style.animationDelay=(0.35+i*0.18)+'s'});
+    status('لوحة السداد: ٤٪ من كل عملية بيع تُسدّد الرصيد تلقائيًا.');
+  }
+  if(n===1)status('جرّبها: أرسل طلب تمويل المخزون.');
+}
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
